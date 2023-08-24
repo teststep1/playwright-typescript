@@ -34,3 +34,27 @@ test('Handle Multiple Tabs using Page Objects', async ({ page }) => {
     // Fill in Search Value for New Page
     await programsBuzzPageObj.fillSearchTxt("random");
 })
+
+test.only('verify multiple tabs', async({context})=>{
+  const page = await context.newPage();
+  await page.goto("http://autopract.com");
+
+  // Close Auto Pract Popup
+  await page.locator("button.close").click();
+
+  // newPage Store Page Instance of ProgramsBuzz
+  const [newPage] = await Promise.all([
+      context.waitForEvent('page'),
+      // Click on Copywright Link in Footer Section of Auto Pract
+      page.locator("div.footer-end a").click() 
+    ])
+    
+    // Wait for Page Load
+    await newPage.waitForLoadState();          
+    
+    // title of new tab page - ProgramsBuzz
+    console.log(await newPage.title());
+    
+    // title of existing page - Auto Pract
+    console.log(await page.title());
+})

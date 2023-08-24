@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "playwright-demo",
-=======
   "name": "playwright-typescript",
->>>>>>> 3150048 (multiple tabs using page objects)
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
