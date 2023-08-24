@@ -35,8 +35,8 @@ test('Handle Multiple Tabs using Page Objects', async ({ page }) => {
     await programsBuzzPageObj.fillSearchTxt("random");
 })
 
-test.only('verify multiple tabs', async({context})=>{
-  const page = await context.newPage();
+test.only('verify multiple tabs', async({page})=>{
+  // const page = await context.newPage();
   await page.goto("http://autopract.com");
 
   // Close Auto Pract Popup
@@ -44,7 +44,7 @@ test.only('verify multiple tabs', async({context})=>{
 
   // newPage Store Page Instance of ProgramsBuzz
   const [newPage] = await Promise.all([
-      context.waitForEvent('page'),
+      page.waitForEvent('popup'),
       // Click on Copywright Link in Footer Section of Auto Pract
       page.locator("div.footer-end a").click() 
     ])
