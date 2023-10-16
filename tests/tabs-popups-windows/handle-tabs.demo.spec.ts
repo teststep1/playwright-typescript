@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../page-objects/home.page';
-import { ProgramsBuzzPage } from '../page-objects/programsbuzz.page';
+import { HomePage } from '../../page-objects/home.page';
+import { ProgramsBuzzPage } from '../../page-objects/programsbuzz.page';
 
 
 let homePageObj:HomePage;
