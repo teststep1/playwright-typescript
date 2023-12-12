@@ -35,7 +35,7 @@ test('Handle Multiple Tabs using Page Objects', async ({ page }) => {
     await programsBuzzPageObj.fillSearchTxt("random");
 })
 
-test.only('verify multiple tabs', async({page})=>{
+test('verify multiple tabs', async({page})=>{
   // const page = await context.newPage();
   await page.goto("http://autopract.com");
 
